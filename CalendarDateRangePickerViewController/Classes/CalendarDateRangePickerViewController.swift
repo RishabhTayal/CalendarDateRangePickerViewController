@@ -33,7 +33,7 @@ open class CalendarDateRangePickerViewController: UICollectionViewController {
     public var selectedColor = UIColor(red: 66/255.0, green: 150/255.0, blue: 240/255.0, alpha: 1.0)
     public var titleText = "Select Dates"
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = self.titleText
