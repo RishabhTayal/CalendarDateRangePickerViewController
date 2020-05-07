@@ -63,10 +63,13 @@ open class CalendarDateRangePickerViewController: UICollectionViewController {
     }
     
     @objc func didTapDone() {
-        if selectedStartDate == nil || selectedEndDate == nil {
+        if selectedStartDate != nil && selectedEndDate == nil {
+            delegate.didPickDateRange(startDate: selectedStartDate!, endDate: selectedStartDate!)
+        } else if selectedStartDate == nil || selectedEndDate == nil {
             return
+        } else {
+            delegate.didPickDateRange(startDate: selectedStartDate!, endDate: selectedEndDate!)
         }
-        delegate.didPickDateRange(startDate: selectedStartDate!, endDate: selectedEndDate!)
     }
     
 }
